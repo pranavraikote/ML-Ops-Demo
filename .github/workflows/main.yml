@@ -26,5 +26,11 @@ jobs:
           pip install -r requirements.txt
           python train.py
           
-          echo "Metric"
-          cat metrics.txt
+          echo "##Metric" > report.md
+          cat metrics.txt >> report.md
+          
+          echo '##Results Visualization" >> report.md
+          cml-publish feature_importance.png --md >>report.md
+          
+          cml-send-comment report.md
+          
