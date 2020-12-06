@@ -8,7 +8,7 @@ import seaborn as sns
 import numpy as np
 
 # Load in the data
-df = pd.read_csv("wine_quality-red.csv")
+df = pd.read_csv("data.csv")
 
 # Split into train and test sections
 y = df.pop("quality")
