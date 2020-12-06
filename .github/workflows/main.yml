@@ -1,5 +1,4 @@
 # This is a basic workflow to help you get started with Actions
-
 name: MLOps-Demo
 
 # Controls when the action will run. 
@@ -20,15 +19,12 @@ jobs:
         
       # Runs a single command using the runners shell
       - name: Wine Quality Run
-        
         env:
           key: ${{ secrets.GITHUB_TOKEN}}
-
       # Runs a set of commands using the runners shell
         run: |
-                   
-          pip install -r requirements.txt 
+          pip install -r requirements.txt
           python train.py
-            
-          echo "Metrics"
+          
+          echo "Metric"
           cat metrics.txt
