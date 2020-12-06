@@ -7,6 +7,7 @@ Created on Sun Dec 6 23:53:32 2020
 
 #Import modules
 from sklearn import datasets
+from sklearn.metrics import accuracy_score
 from sklearn.neighbors import KNeighborsClassifier
 from sklearn.model_selection import train_test_split
 from sklearn.metrics import classification_report, confusion_matrix
@@ -31,12 +32,17 @@ classifier=KNeighborsClassifier(n_neighbors = 5)
 classifier.fit(X_train, Y_train)
 
 #Predict using the test data
-y_pred=classifier.predict(X_test)
+y_pred = classifier.predict(X_test)
 
 #Print the Confusion Matrix
-print('Confusion matrix is as follows')
-print(confusion_matrix(y_test, y_pred))
+#print('Confusion matrix is as follows')
+#print(confusion_matrix(Y_test, y_pred))
 
 #Print Precision and Recall
-print('Accuracy Metrics')
-print(classification_report(y_test, y_pred))
+#print('Accuracy Metrics')
+#print(classification_report(Y_test, y_pred))
+
+acc = accuracy_score(Y_test, y_pred)
+
+with open("metrics.txt", 'w') as outfile:
+        outfile.write("Accuracy Score : %2.1f%%\n" % acc)
