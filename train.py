@@ -16,7 +16,7 @@ X_train, X_test, Y_train, Y_test = train_test_split(df, y, test_size = 0.2)
 
 
 # Fit a model on the train section
-regr = RandomForestRegressor(max_depth = 2)
+regr = RandomForestRegressor(max_depth = 5)
 regr.fit(X_train, Y_train)
 
 # Report training set score
